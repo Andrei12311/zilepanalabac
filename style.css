@@ -1,22 +1,5 @@
-/* Fundal video YouTube */
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Face ca video-ul să fie în spatele conținutului */
-}
-
-.video-background iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Se asigură că video-ul acoperă întreaga fereastră fără bare negre */
-}
-
-/* Stilizarea containerului cu numărătoarea inversă */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,45 +9,66 @@ body {
     overflow: hidden;
 }
 
-/* Container pentru numărătoare */
+/* Containerul pentru numărătoare */
 .countdown-container {
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6); /* Transparent pentru a lăsa fundalul să se vadă */
+    padding: 40px 60px;
+    border-radius: 25px; /* Colțuri mai rotunjite pentru un aspect modern */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Umbrele pentru adâncire */
     position: relative;
+    backdrop-filter: blur(8px); /* Blur pentru efect de transparență */
+    transition: transform 0.3s ease; /* Transformarea la hover */
 }
 
-/* Efectul de fulger pentru container */
-@keyframes lightningEffect {
+/* Efect de hover pe container */
+.countdown-container:hover {
+    transform: scale(1.05); /* Mărim ușor containerul pentru interactivitate */
+}
+
+/* Stilizarea titlurilor (h1) */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00; /* O nuanță de galben care se potrivește cu apusul */
+    animation: fadeIn 1s ease-out;
+}
+
+/* Stilizarea paragrafului */
+p {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    color: #ffffff;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Animarea textului pentru un efect subtil */
+@keyframes fadeIn {
     0% {
-        border: 5px solid transparent;
-    }
-    50% {
-        border: 5px solid #00f; /* Albastru strălucitor */
+        opacity: 0;
     }
     100% {
-        border: 5px solid transparent;
+        opacity: 1;
     }
 }
 
-.countdown-container {
-    animation: lightningEffect 1s infinite;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-p {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    color: #fff;
-}
-
-#countdown p {
+/* Stilizarea numerelor sau textelor interactive (ex. zile, ore, etc.) */
+.countdown-item {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 4rem;
     font-weight: bold;
+    color: #ffcc00; /* Aceeași nuanță de galben pentru un contrast plăcut */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efectul de hover pe numere/text */
+.countdown-item:hover {
+    transform: scale(1.15); /* Mărim numărul/textul la hover pentru un efect dinamic */
+    color: #ffffff; /* Se face alb la hover pentru a ieși în evidență */
+}
+
+/* Adăugarea unui border subtil în jurul chenarului */
+.countdown-container {
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Bordură albă subtilă pentru a adăuga un contur */
 }
