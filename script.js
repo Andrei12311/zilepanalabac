@@ -1,5 +1,5 @@
-// Data pentru examenul de BAC (poți înlocui cu data corectă)
-const dataBac = new Date("2025-06-10T08:00:00").getTime();
+// Data pentru examenul de BAC: 10 iunie 2025, ora 08:00 AM
+const dataBac = new Date("2025-06-10T08:00:00").getTime(); 
 
 // Actualizează cronometru-ul la fiecare secundă
 let x = setInterval(function() {
