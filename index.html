@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunt cel mai tare</title> <!-- Modifică titlul aici -->
+    <title>Sunt cel mai tare</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Video de fundal -->
-    <video autoplay muted loop id="background-video">
+
+<!-- Container pentru video -->
+<div id="video-container">
+    <!-- Primul videoclip -->
+    <video autoplay muted id="video1" style="display:block;">
         <source src="chill.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Containerul care va conține numărătoarea inversă -->
-    <div class="container">
-        <h1>Casian e SEF</h1>
-        <div id="countdown"></div>
-    </div>
+    <!-- Al doilea videoclip -->
+    <video autoplay muted id="video2" style="display:none;">
+        <source src="video_apus_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <script src="script.js"></script>
+    <!-- Al treilea videoclip -->
+    <video autoplay muted id="video3" style="display:none;">
+        <source src="video_apus_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Al patrulea videoclip -->
+    <video autoplay muted id="video4" style="display:none;">
+        <source src="video_apus_4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Containerul care va conține numărătoarea inversă -->
+<div class="container">
+    <h1>Casian e SEF</h1>
+    <div id="countdown"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
