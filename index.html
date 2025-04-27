@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Bacalaureat</title>
+    <title>Numărătoare inversă cu apus de soare</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Video background -->
+
+    <!-- Fundal video local -->
     <div class="video-background">
-        <video autoplay muted loop id="bg-video">
-            <source src="chill.mp4" type="video/mp4">
-            <!-- Poți adăuga și alte formate video pentru compatibilitate -->
-            <source src="video-ul-tau.webm" type="video/webm">
-            <source src="video-ul-tau.ogv" type="video/ogg">
-            Your browser does not support the video tag.
+        <video autoplay muted loop>
+            <source src="chillu.mp4" type="video/mp4"> <!-- Pune calea corectă către video -->
+            <!-- În caz că browserul nu poate reda video-ul, adăugăm un fallback -->
+            Video-ul nu este susținut de browserul tău.
         </video>
     </div>
 
+    <!-- Containerul pentru numărătoarea inversă -->
     <div class="countdown-container">
-        <h1>Numărătoare inversă pentru Bacalaureat</h1>
+        <h1>Numărătoare inversă</h1>
         <div id="countdown">
-            <p id="zile">0 zile</p>
-            <p id="ore">0 ore</p>
-            <p id="minute">0 minute</p>
-            <p id="secunde">0 secunde</p>
+            <p class="countdown-item" id="days">00</p>
+            <p>zile</p>
+            <p class="countdown-item" id="hours">00</p>
+            <p>ore</p>
+            <p class="countdown-item" id="minutes">00</p>
+            <p>minute</p>
+            <p class="countdown-item" id="seconds">00</p>
+            <p>secunde</p>
         </div>
     </div>
 
