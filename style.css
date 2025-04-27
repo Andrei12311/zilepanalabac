@@ -1,13 +1,4 @@
-/* Fundal animat */
-@keyframes moveBackground {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
-}
-
+/* Fundal cu imagine de cascadă */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -15,17 +6,46 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #ff6347, #f0e68c, #add8e6);
-    background-size: 400% 400%;
-    animation: moveBackground 15s ease infinite;
+    background: url('https://example.com/cascada.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: moveBackground 30s linear infinite;
 }
 
+/* Animație pentru mișcarea fundalului cascadei */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+/* Stilizarea containerului cu numărătoarea inversă */
 .countdown-container {
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* Efectul de fulger pentru container */
+@keyframes lightningEffect {
+    0% {
+        border: 5px solid transparent;
+    }
+    50% {
+        border: 5px solid #00f; /* Albastru strălucitor */
+    }
+    100% {
+        border: 5px solid transparent;
+    }
+}
+
+.countdown-container {
+    animation: lightningEffect 1s infinite;
 }
 
 h1 {
