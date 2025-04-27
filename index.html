@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Video background (YouTube) -->
+    <!-- Video background -->
     <div class="video-background">
-        <iframe src="https://www.youtube.com/embed/sa2JCQ1Dils?autoplay=1&loop=1&playlist=sa2JCQ1Dils&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <video autoplay muted loop id="bg-video">
+            <source src="chill.mp4" type="video/mp4">
+            <!-- Poți adăuga și alte formate video pentru compatibilitate -->
+            <source src="video-ul-tau.webm" type="video/webm">
+            <source src="video-ul-tau.ogv" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <div class="countdown-container">
