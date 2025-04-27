@@ -3,33 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numărătoare inversă cu apus de soare</title>
+    <title>Countdown până la BAC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Video de fundal -->
+    <video autoplay muted loop id="background-video">
+        <source src="chill.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <!-- Fundal video local -->
-    <div class="video-background">
-        <video autoplay muted loop>
-            <source src="chillu.mp4" type="video/mp4"> <!-- Pune calea corectă către video -->
-            <!-- În caz că browserul nu poate reda video-ul, adăugăm un fallback -->
-            Video-ul nu este susținut de browserul tău.
-        </video>
-    </div>
-
-    <!-- Containerul pentru numărătoarea inversă -->
-    <div class="countdown-container">
-        <h1>Numărătoare inversă</h1>
-        <div id="countdown">
-            <p class="countdown-item" id="days">00</p>
-            <p>zile</p>
-            <p class="countdown-item" id="hours">00</p>
-            <p>ore</p>
-            <p class="countdown-item" id="minutes">00</p>
-            <p>minute</p>
-            <p class="countdown-item" id="seconds">00</p>
-            <p>secunde</p>
-        </div>
+    <div class="container">
+        <h1>Numărătoare inversă până la BAC</h1>
+        <div id="countdown"></div>
     </div>
 
     <script src="script.js"></script>
