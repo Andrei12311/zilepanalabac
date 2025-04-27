@@ -6,6 +6,7 @@ html, body {
     overflow: hidden; /* Oprește scroll-ul dacă video-ul este prea mare */
 }
 
+/* Setăm stilul pentru video */
 #background-video {
     position: absolute;
     top: 0;
@@ -13,26 +14,37 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Asigură-te că video-ul acoperă întreaga pagină */
-    z-index: -1; /* Asigură-te că video-ul este în spatele altor elemente */
+    z-index: -1; /* Video-ul va fi în spatele altor elemente */
 }
 
+/* Stilul pentru containerul care ține numărătoarea inversă */
 .container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrare perfectă */
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.7); /* Transparent, dar cu fundal alb */
-    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent cu fundal negru pentru contrast */
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     z-index: 1; /* Face ca acest div să fie deasupra video-ului */
+    width: 80%;
+    max-width: 600px;
 }
 
+/* Stil pentru titlu */
 h1 {
-    color: #333;
+    color: white;
+    font-size: 2rem;
+    margin: 0;
 }
 
+/* Stil pentru numărătoarea inversă */
 #countdown {
     font-size: 2rem;
     font-weight: bold;
-    color: #e74c3c;
+    color: #e74c3c; /* Culoare pentru a evidenția numărătoarea */
     margin-top: 20px;
+    color: white;
 }
