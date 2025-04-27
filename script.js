@@ -1,4 +1,51 @@
-// Data pentru examenul de BAC: 10 iunie 2025, ora 08:00 AM
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunt cel mai tare</title>
+    <link rel="stylesheet" href="style.css"> <!-- link către fișierul CSS -->
+</head>
+<body>
+
+<!-- Container pentru video -->
+<div id="video-container">
+    <!-- Primul videoclip -->
+    <video id="video1" autoplay muted>
+        <source src="video_apus_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Al doilea videoclip -->
+    <video id="video2" muted style="display:none;">
+        <source src="video_apus_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Al treilea videoclip -->
+    <video id="video3" muted style="display:none;">
+        <source src="video_apus_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Al patrulea videoclip -->
+    <video id="video4" muted style="display:none;">
+        <source src="video_apus_4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Containerul care va conține numărătoarea inversă -->
+<div class="container">
+    <h1>Sunt cel mai tare</h1>
+    <div id="countdown"></div> <!-- Numărătoarea inversă -->
+</div>
+
+<!-- Link către fișierul JavaScript -->
+<script src="script.js"></script>
+
+<script>
+// Data pentru examenul de BAC
 const dataBac = new Date("2025-06-10T08:00:00").getTime(); 
 
 // Actualizează cronometru-ul la fiecare secundă
@@ -25,27 +72,7 @@ let x = setInterval(function() {
         document.getElementById("countdown").innerHTML = "BAC-ul a început!";
     }
 }, 1000);
+</script>
 
-/ Selectăm toate elementele video
-const videos = document.querySelectorAll('video');
-let currentVideoIndex = 0;
-
-// Funcția pentru a schimba videoclipurile
-function changeVideo() {
-    // Ascunde videoclipul curent
-    videos[currentVideoIndex].style.display = 'none';
-
-    // Mergem la următorul videoclip (dacă este ultimul, revenim la primul)
-    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-
-    // Arată următorul videoclip
-    videos[currentVideoIndex].style.display = 'block';
-}
-
-// Setăm un event listener pentru fiecare video pentru a schimba la următorul videoclip când se termină
-videos.forEach((video, index) => {
-    video.addEventListener('ended', changeVideo);
-});
-
-// Pornim primul videoclip
-videos[currentVideoIndex].style.display = 'block';
+</body>
+</html>
