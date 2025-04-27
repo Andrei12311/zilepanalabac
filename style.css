@@ -24,7 +24,6 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%); /* Centrare perfectă */
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent cu fundal negru pentru contrast */
     padding: 40px;
     border-radius: 10px;
     z-index: 1; /* Face ca acest div să fie deasupra video-ului */
@@ -32,6 +31,7 @@ html, body {
     max-width: 600px;
     border: 8px solid transparent; /* Lăsăm border-ul transparent pentru a adăuga animație */
     position: relative;
+    background-color: rgba(0, 0, 0, 0); /* Fundal transparent */
 }
 
 /* Adăugăm animația de mișcare a apei pentru cadrul din jurul containerului */
