@@ -25,3 +25,27 @@ let x = setInterval(function() {
         document.getElementById("countdown").innerHTML = "BAC-ul a început!";
     }
 }, 1000);
+
+/ Selectăm toate elementele video
+const videos = document.querySelectorAll('video');
+let currentVideoIndex = 0;
+
+// Funcția pentru a schimba videoclipurile
+function changeVideo() {
+    // Ascunde videoclipul curent
+    videos[currentVideoIndex].style.display = 'none';
+
+    // Mergem la următorul videoclip (dacă este ultimul, revenim la primul)
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+
+    // Arată următorul videoclip
+    videos[currentVideoIndex].style.display = 'block';
+}
+
+// Setăm un event listener pentru fiecare video pentru a schimba la următorul videoclip când se termină
+videos.forEach((video, index) => {
+    video.addEventListener('ended', changeVideo);
+});
+
+// Pornim primul videoclip
+videos[currentVideoIndex].style.display = 'block';
