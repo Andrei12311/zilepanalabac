@@ -31,35 +31,6 @@ html, body {
     z-index: 1; /* Face ca acest div să fie deasupra video-ului */
     width: 80%;
     max-width: 600px;
-    border: 8px solid transparent; /* Lăsăm border-ul transparent pentru a adăuga animație */
-    position: relative;
-}
-
-/* Adăugăm animația de mișcare pentru cadrul din jurul containerului */
-.container::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border-radius: 10px;
-    background-image: url('foc.gif'); /* Folosește un GIF sau o imagine cu foc */
-    background-size: cover;
-    z-index: -1;
-    animation: fire-border 3s infinite alternate; /* Animație de foc */
-}
-
-/* Animație pentru mișcarea ramei cu foc */
-@keyframes fire-border {
-    0% {
-        transform: scale(1);
-        filter: brightness(1.2);
-    }
-    100% {
-        transform: scale(1.05);
-        filter: brightness(0.8);
-    }
 }
 
 /* Stil pentru titlu */
