@@ -1,12 +1,23 @@
+/* Fundal animat */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #2c3e50;
-    color: white;
     margin: 0;
+    background: linear-gradient(45deg, #ff6347, #f0e68c, #add8e6);
+    background-size: 400% 400%;
+    animation: moveBackground 15s ease infinite;
 }
 
 .countdown-container {
@@ -14,16 +25,19 @@ body {
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 p {
     font-size: 1.5rem;
     margin: 10px 0;
+    color: #fff;
 }
 
 #countdown p {
