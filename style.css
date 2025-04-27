@@ -24,17 +24,18 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%); /* Centrare perfectă */
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent cu fundal negru pentru contrast */
     padding: 40px;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     z-index: 1; /* Face ca acest div să fie deasupra video-ului */
     width: 80%;
     max-width: 600px;
     border: 8px solid transparent; /* Lăsăm border-ul transparent pentru a adăuga animație */
     position: relative;
-    background-color: rgba(0, 0, 0, 0); /* Fundal transparent */
 }
 
-/* Adăugăm animația de mișcare a apei pentru cadrul din jurul containerului */
+/* Adăugăm animația de mișcare pentru cadrul din jurul containerului */
 .container::before {
     content: '';
     position: absolute;
@@ -43,22 +44,21 @@ html, body {
     right: -8px;
     bottom: -8px;
     border-radius: 10px;
-    background: linear-gradient(45deg, #00c6ff, #0072ff, #00c6ff, #0072ff); /* Gradient de apă */
-    background-size: 200% 200%;
+    background-image: url('foc.gif'); /* Folosește un GIF sau o imagine cu foc */
+    background-size: cover;
     z-index: -1;
-    animation: wave-animation 4s linear infinite; /* Animație de undă fluidă */
+    animation: fire-border 3s infinite alternate; /* Animație de foc */
 }
 
-/* Animația pentru mișcarea apei (unde fluide) */
-@keyframes wave-animation {
+/* Animație pentru mișcarea ramei cu foc */
+@keyframes fire-border {
     0% {
-        background-position: 200% 200%;
-    }
-    50% {
-        background-position: 0% 0%;
+        transform: scale(1);
+        filter: brightness(1.2);
     }
     100% {
-        background-position: 200% 200%;
+        transform: scale(1.05);
+        filter: brightness(0.8);
     }
 }
 
