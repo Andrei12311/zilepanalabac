@@ -2,12 +2,31 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown BAC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Mai sunt <span id="zile"></span> zile până la BAC!</h1>
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days"></span>
+                <span>zile</span>
+            </div>
+            <div class="countdown-item">
+                <span id="hours"></span>
+                <span>ore</span>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes"></span>
+                <span>minute</span>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds"></span>
+                <span>secunde</span>
+            </div>
+        </div>
+        <p class="message">Casian e cel mai tare!</p>
     </div>
     <script src="script.js"></script>
 </body>
