@@ -1,5 +1,5 @@
 // Data pentru examenul de BAC (poți înlocui cu data corectă)
-const dataBac = new Date("2025-06-10").getTime(); 
+const dataBac = new Date("2025-06-10T08:00:00").getTime();
 
 // Actualizează cronometru-ul la fiecare secundă
 let x = setInterval(function() {
