@@ -1,4 +1,4 @@
-const deadline = new Date('2025-06-10T00:00:00'); // Data BAC-ului
+const deadline = new Date('2025-06-16T00:00:00'); // Data BAC-ului
 const countdownElements = {
     days: document.getElementById('days'),
     hours: document.getElementById('hours'),
@@ -15,6 +15,9 @@ function updateCountdown() {
     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
+    // Verificare pentru consola
+    console.log(`Timp rămas: ${days} zile, ${hours} ore, ${minutes} minute, ${seconds} secunde`);
+
     countdownElements.days.textContent = days + ' zile';
     countdownElements.hours.textContent = hours + ' ore';
     countdownElements.minutes.textContent = minutes + ' minute';
@@ -29,4 +32,5 @@ function updateCountdown() {
     }
 }
 
+// Updatează numărătoarea la fiecare secundă
 const interval = setInterval(updateCountdown, 1000);
