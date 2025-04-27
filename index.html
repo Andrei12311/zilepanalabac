@@ -1,40 +1,24 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunt cel mai tare</title>
+    <title>Zile pana la BAC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Container pentru video -->
-<div id="video-container">
-    <!-- Primul videoclip -->
-    <video id="video1" autoplay muted>
+    <!-- Video de fundal -->
+    <video autoplay muted loop id="background-video">
         <source src="chill.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Al doilea videoclip -->
-    <video id="video2" muted style="display:none;">
-        <source src="chill2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Containerul care va conține numărătoarea inversă -->
+    <div class="container">
+        <h1>A mai ramas putin pana la examenul de BACALAUREAT!</h1>
+        <div id="countdown"></div>
+    </div>
 
-    <!-- Al treilea videoclip -->
-    <video id="video3" muted style="display:none;">
-        <source src="chill3.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-
-<!-- Containerul care va conține numărătoarea inversă -->
-<div class="container">
-    <h1>Casian e SEF</h1>
-    <div id="countdown"></div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
