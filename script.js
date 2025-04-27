@@ -1,30 +1,26 @@
 // Setează data examenului Bacalaureat
 const dataBac = new Date("2025-06-10T09:00:00").getTime();
 
-// Actualizează timpul la fiecare secundă
+// Actualizează numărătoarea inversă la fiecare secundă
 const interval = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
 
-    // Obține data și ora curentă
-    const acum = new Date().getTime();
+    // Calculăm zilele, orele, minutele și secundele rămase
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Calculează diferența în milisecunde
-    const diferenta = dataBac - acum;
+    // Afișează rezultatele în HTML
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
 
-    // Calculează zilele, orele, minutele și secundele
-    const zile = Math.floor(diferenta / (1000 * 60 * 60 * 24));
-    const ore = Math.floor((diferenta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minute = Math.floor((diferenta % (1000 * 60 * 60)) / (1000 * 60));
-    const secunde = Math.floor((diferenta % (1000 * 60)) / 1000);
-
-    // Afișează rezultatele
-    document.getElementById("zile").innerHTML = zile + " zile";
-    document.getElementById("ore").innerHTML = ore + " ore";
-    document.getElementById("minute").innerHTML = minute + " minute";
-    document.getElementById("secunde").innerHTML = secunde + " secunde";
-
-    // Dacă s-a ajuns la data examenului
-    if (diferenta < 0) {
+    // Dacă numărătoarea inversă a ajuns la zero
+    if (distance < 0) {
         clearInterval(interval);
-        document.getElementById("countdown").innerHTML = "<h2>Felicitări! A sosit ziua examenului!</h2>";
+        document.getElementById("countdown").innerHTML = "Numărătoarea s-a terminat!";
     }
 }, 1000);
